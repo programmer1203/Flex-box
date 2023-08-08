@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box</title>
+    <style>
+
+         .container{
+            background-color: yellow;
+            margin: 50px;
+            text-align: center;
+        }
+        
+        h1{
+            margin-left: 50px;
+        }
+
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            margin: 2px;
+            padding: 2px;
+        }
+        #box1{
+            background-color: red;
+        }
+        #box2{
+            background-color: green;
+        }
+        #box3{
+            background-color: blue;
+        }
+        #box4{
+            background-color: palevioletred;
+        }
+
+        .container2{
+            background-color: yellow;
+            margin: 50px;
+            text-align: center;
+            display: flex;
+            height: 100vh;
+        }
+
+        .container3{
+            flex-direction: column;
+        }
+
+        .container4{
+            flex-direction: row-reverse;
+        }
+
+        .container5{
+            flex-direction: column-reverse;
+        }
+
+        .container6{
+            justify-content: flex-start;
+        }
+
+        .container7{
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .container8{
+            justify-content: flex-end;
+        }
+
+        .container9{
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .container10{
+            justify-content: center;
+        }
+
+        .container11{
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .container12{
+            justify-content: space-around;
+        }
+
+        .container13{
+            justify-content:space-around;
+            flex-wrap: wrap;
+        }
+
+        .container14{
+            justify-content: space-between;
+        }
+
+        .container15{
+            justify-content:space-between;
+            flex-wrap: wrap;
+        }
+
+        .container16{
+            justify-content: space-evenly;
+        }
+
+        .container17{
+            justify-content:space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .boxbaseline{
+            width: 100px;
+            height: 100px;
+        }
+
+        .boxbaseline1{
+            width: 100px;
+        }
+
+        .boxstretch{
+            width: 100px;
+        }
+
+        .container18{
+            align-items: flex-start;
+        }
+
+        .container19{
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .container20{
+            align-items: flex-end;
+        }
+
+        .container21{
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .container22{
+            align-items: center;
+        }
+
+        .container23{
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container24{
+            align-items: baseline;
+        }
+
+        .container25{
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .container26{
+            align-items: stretch;
+        }
+
+        .container27{
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+        .container28{
+            align-content: flex-start;
+        }
+
+        .container29{
+            align-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .container30{
+            align-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .container31{
+            align-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .container32{
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        .container33{
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        .container34{
+            align-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .container35{
+            align-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .container36{
+            align-content: space-between;
+        }
+
+        .container37{
+            align-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .container38{
+            align-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .container39{
+            align-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+    
+
+    </style>
+</head>
+<body>
+
+    <h1>Default view</h1>
+    <div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Flex view : By default it is set in direction of row.</h1>
+    <div class=" container2">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Flex direction column view</h1>
+    <div class="container2 container3">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Flex direction row reverse view</h1>
+    <div class="container2 container4">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Flex direction column reverse view</h1>
+    <div class="container2 container5">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content flex-start with nowrap/wrap and less items</h1>
+    </h1>
+    <div class="container2 container6">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content flex-start with no wrap and more items</h1>
+    <div class="container2 container6">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content flex-start with wrap and more items</h1>
+    <div class=" container2 container7">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content flex-end nowrap/wrap and less items</h1>
+    <div class=" container2 container8">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content flex-end with no wrap and more items</h1>
+    <div class=" container2 container8">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content flex-end with wrap and more items</h1>
+    <div class=" container2 container9">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content center with nowrap/wrap and less items</h1>
+    <div class=" container2 container10">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content center with no wrap and more items</h1>
+    <div class=" container2 container10">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content center with wrap and more items</h1>
+    <div class=" container2 container11">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space around with nowrap/wrap and less items</h1>
+    <div class=" container2 container12">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space around with no wrap and more items</h1>
+    <div class=" container2 container12">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space around with wrap and more items</h1>
+    <div class=" container2 container13">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space between with nowrap/wrap and less items</h1>
+    <div class=" container2 container14">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space between with no wrap and more items</h1>
+    <div class=" container2 container14">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space between with wrap and more items</h1>
+    <div class=" container2 container15">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space evenly with nowrap/wrap and less items</h1>
+    <div class=" container2 container16">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space evenly with no wrap and more items</h1>
+    <div class=" container2 container16">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Justify content space evenly with wrap and more items</h1>
+    <div class=" container2 container17">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items flex-start with nowrap/wrap and less items</h1>
+    <div class=" container2 container18">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items flex-start with no wrap and more items</h1>
+    <div class=" container2 container18">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items flex-start with wrap and more items</h1>
+    <div class=" container2 container19">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align-items flex-end with nowrap/wrap and less items</h1>
+    <div class=" container2 container20">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items flex-end with no wrap and more items</h1>
+    <div class=" container2 container20">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items flex-end with wrap and more items</h1>
+    <div class=" container2 container21">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items center with nowrap/wrap and less items</h1>
+    <div class=" container2 container22">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items center with no wrap and more items</h1>
+    <div class=" container2 container22">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items center with wrap and more items</h1>
+    <div class=" container2 container23">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+
+    <h1>Align items baseline with no wrap and less items 
+        (The items are aligned along the axis of the base of the contents of the items. For example - here base of the numbers 1,2,3,4 lie on the same axis)</h1>
+    <div class=" container2 container24">
+        <div class="boxbaseline" id="box1" style="font-size: 10rem;">1</div>
+        <div class="boxbaseline" id="box2">2</div>
+        <div class="boxbaseline" id="box3" style="font-size: 5rem;">3</div>
+        <div class="boxbaseline" id="box4">4</div>
+    </div>
+
+    <h1>Align items baseline with no wrap and more items</h1>
+    <div class=" container2 container24">
+        <div class="boxbaseline" id="box1" style="font-size: 10rem;">1</div>
+        <div class="boxbaseline" id="box2">2</div>
+        <div class="boxbaseline" id="box3">3</div>
+        <div class="boxbaseline" id="box4" style="font-size: 5rem;">4</div>
+        <div class="boxbaseline" id="box1">1</div>
+        <div class="boxbaseline" id="box2">2</div>
+        <div class="boxbaseline" id="box3">3</div>
+        <div class="boxbaseline" id="box4">4</div>
+        <div class="boxbaseline" id="box1">1</div>
+        <div class="boxbaseline" id="box2">2</div>
+        <div class="boxbaseline" id="box3" style="font-size: 7rem;">3</div>
+        <div class="boxbaseline" id="box4">4</div>
+        <div class="boxbaseline" id="box1" style="font-size: 10rem;">1</div>
+    </div>
+
+    <h1>Align items baseline with wrap and more items</h1>
+    <div class=" container2 container25">
+        <div class="boxbaseline" id="box1" style="font-size: 10rem;">1</div>
+        <div class="boxbaseline" id="box2">2</div>
+        <div class="boxbaseline" id="box3">3</div>
+        <div class="boxbaseline" id="box4" style="font-size: 5rem;">4</div>
+        <div class="boxbaseline" id="box1">1</div>
+        <div class="boxbaseline" id="box2">2</div>
+        <div class="boxbaseline" id="box3">3</div>
+        <div class="boxbaseline" id="box4">4</div>
+        <div class="boxbaseline" id="box1">1</div>
+        <div class="boxbaseline" id="box2">2</div>
+        <div class="boxbaseline" id="box3" style="font-size: 7rem;">3</div>
+        <div class="boxbaseline" id="box4">4</div>
+        <div class="boxbaseline" id="box1" style="font-size: 10rem;">1</div>
+
+    </div>
+
+    <h1>Align items baseline with no wrap and less items 
+        (When height is not fixed.)</h1>
+    <div class=" container2 container24">
+        <div class="boxbaseline1" id="box1" style="font-size: 10rem;">1</div>
+        <div class="boxbaseline1" id="box2">2</div>
+        <div class="boxbaseline1" id="box3" style="font-size: 5rem;">3</div>
+        <div class="boxbaseline1" id="box4">4</div>
+    </div>
+
+    <h1>Align items stretch with no wrap and less items
+        (Works when height is not fixed.)
+    </h1>
+    <div class=" container2 container26">
+        <div class="boxstretch" id="box1">1</div>
+        <div class="boxstretch" id="box2">2</div>
+        <div class="boxstretch" id="box3">3</div>
+        <div class="boxstretch" id="box4">4</div>
+    </div>
+
+    <h1>Align items stretch with no wrap and more items</h1>
+    <div class=" container2 container26">
+        <div class="boxstretch" id="box1">1</div>
+        <div class="boxstretch" id="box2">2</div>
+        <div class="boxstretch" id="box3">3</div>
+        <div class="boxstretch" id="box4">4</div>
+        <div class="boxstretch" id="box1">1</div>
+        <div class="boxstretch" id="box2">2</div>
+        <div class="boxstretch" id="box3">3</div>
+        <div class="boxstretch" id="box4">4</div>
+        <div class="boxstretch" id="box1">1</div>
+        <div class="boxstretch" id="box2">2</div>
+        <div class="boxstretch" id="box3">3</div>
+        <div class="boxstretch" id="box4">4</div>
+    </div>
+
+    <h1>Align items stretch with wrap and more items</h1>
+    <div class=" container2 container27">
+        <div class="boxstretch" id="box1">1</div>
+        <div class="boxstretch" id="box2">2</div>
+        <div class="boxstretch" id="box3">3</div>
+        <div class="boxstretch" id="box4">4</div>
+        <div class="boxstretch" id="box1">1</div>
+        <div class="boxstretch" id="box2">2</div>
+        <div class="boxstretch" id="box3">3</div>
+        <div class="boxstretch" id="box4">4</div>
+        <div class="boxstretch" id="box1">1</div>
+        <div class="boxstretch" id="box2">2</div>
+        <div class="boxstretch" id="box3">3</div>
+        <div class="boxstretch" id="box4">4</div>
+    </div>
+
+    <h1>Align content flex-start with nowrap/wrap and less items. (Wrap and nowrap has same result).</h1>
+<div class="container2 container28">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content flex-start with wrap and more items</h1>
+<div class="container2 container29">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content flex-end with wrap and less items. (Works only with wrap.)</h1>
+<div class=" container2 container30">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content flex-end with wrap and more items</h1>
+<div class=" container2 container31">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content center with wrap and less items. (Works only with wrap)</h1>
+<div class=" container2 container32">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content center with wrap and more items</h1>
+<div class=" container2 container33">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content space around with wrap and less items. (Works only with wrap.)</h1>
+<div class=" container2 container34">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content space around with wrap and more items</h1>
+<div class=" container2 container35">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content space between with nowrap/wrap and less items. (Wrap and no wrap has sam effect as items are pushed towards the edge to create space between them.)</h1>
+<div class=" container2 container36">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content space between with wrap and more items</h1>
+<div class=" container2 container37">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content space evenly with wrap and less items. (Works only with wrap)</h1>
+<div class=" container2 container38">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+<h1>Align content space evenly with wrap and more items</h1>
+<div class=" container2 container39">
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+</div>
+
+</body>
+</html>
